@@ -1,0 +1,97 @@
+\documentclass[english,ngerman,10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[landscape,a3paper]{geometry}
+\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=1cm,rmargin=1cm}
+\usepackage{babel}
+\usepackage{amssymb,amsmath}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\parindent=0pt 
+
+\begin{document}
+% Define Page as command to enable serial merge 
+\newcommand\ballot[1]{
+\thispagestyle{empty} % No Page Number
+{\huge \textbf{Wahlzettel für die Wahl zum Studierendenparlament !!! DEMO !!!}}\\
+\begin{figure}[h!]
+\begin{minipage}[h!]{0.8\textwidth} 
+\textbf{{\large Stimmzettel (Ballot)}}\newline
+Mit deiner Erststimme wählst du die Liste deines Vertrauens. Mit deiner Zweitstimme wählst du einen beliebigen Kandidaten oder eine beliebige Kandidatin. Du kannst aus allen Fachbereichen wählen.\newline
+With your first vote you select the list of your trust. With your second vote you choose any candidate. You can choose from all subject areas.
+\end{minipage}
+\hfill
+\begin{minipage}[h!]{0.2\textwidth}
+\includegraphics{#1}
+\end{minipage}
+\end{figure}
+\\
+\textbf{{\large Erststimme (First Vote)}}\newline
+{\normalsize
+Du hast eine Stimme. \newline
+You have one vote. \newline
+\newline
+\begin{tabular}{r l c l l l l }
+Lfd. Nr.& Liste 										& Stimme/Vote 			&	&	\textbf{Enthaltung} 	 						&	\\
+1		& List1											&$\square$				&	&	Erststimme (First Vote)							&$\square$ \\
+2		& List2											&$\square$				&	&	Zweitstimme (Second Vote)						&$\square$ \\
+3		& List3											&$\square$				&	&													&	\\
+4		& List4											&$\square$				&	&													&	\\
+5		& List5											&$\square$				&	&	Bei Fehlern, bitte Kästchen komplett ausmalen.	&	\\
+6		& List6											&$\square$				&	&	On faulty ballots, please fill out the box.		&	\\
+7		& List7											&$\square$				&	&													&	\\	
+8		& List8											&$\square$				&	&													&	\\		
+9		& List9											&$\square$				&	&													&	\\
+10		& List10										&$\square$				&	&													&	\\
+\end{tabular}
+\\
+\\
+\\
+\\
+\textbf{{\large Zweitstimme (Second Vote)}} \newline
+Du hast eine Stimme. \newline
+You have one vote.} \newline
+\newline
+\small{
+\begin{tabular}{|r | l | l | c || r | l | l | c || r | l | l | c || r | l | l | c |}
+\multicolumn{4}{l}{\textbf{Fakultät für Geisteswissenschaften}} &
+\multicolumn{4}{l}{\textbf{Fortsetzung Fakultät für Gesellschaftswissenschaften}} &
+\multicolumn{4}{l}{\textbf{Fortsetzung Fakultät für Wirtschaftswissenschaften}} &
+\multicolumn{4}{l}{\textbf{Fortsetzung Fakultät für Ingenieurwissenschaften}} \\ \hline
+Lfd.Nr.	& Name 					& Liste 		& Stimme/Vote 	& Lfd.Nr. 	& Name 				& Liste 		& Stimme/Vote 	& Lfd.Nr. 	& Name 					& Liste 	& Stimme/Vote 	& Lfd.Nr.	& Name & Liste & Stimme/Vote \\ \hline
+1		& Doe, John				& Liste1		&$\square$ 		& 	27		& Doe, John			& Liste3		&$\square$		&	50		& Doe, John				& Liste1	&$\square$ 		&70    		& Doe, John	 	 & Liste8	&$\square$\\ \hline
+
+2		& Doe, John				& Liste2		&$\square$		& 	28		& Doe, John			& Liste4		&$\square$		&	51		& Doe, John				& Liste2	&$\square$		&71			& Doe, John		& Liste6	&$\square$\\ \hline
+
+3		& Doe, John				& Liste3		&$\square$		&	29		& Doe, John			& Liste3		&$\square$		&	52		& Doe, John				& Liste6	&$\square$		&72			& Doe, John		& Liste3	&$\square$\\ \hline
+
+4		& Doe, John				& Liste3		&$\square$		&	30		& Doe, John			& Liste3		&$\square$		&	53		& Doe, John				& Liste7	&$\square$		&73			& Doe, John		& Liste3	&$\square$\\ \hline
+
+5		& Doe, John				& Liste4		&$\square$		&	31		& Doe, John			& Liste7		&$\square$ 		&	54		& Doe, John				& Liste3&	$\square$		&74			& Doe, John		& Liste3	&$\square$\\ \hline
+
+6		& Doe, John				& Liste5		&$\square$		&	32		& Doe, John			& Liste2		&$\square$		&			&						&			&				&75			& Doe, John		& Liste3	&$\square$ \\ \hline
+
+7		& Doe, John				& Liste3		&$\square$		&	33		& Doe, John			& Liste3		&$\square$		&\multicolumn{4}{l||}{\textbf{Fakultät für Chemie}}				&76			& Doe, John		& Liste4	&$\square$ \\ \hline
+
+8		& Doe, John				& Liste4		&$\square$		&	34		& Doe, John			& Liste3		&$\square$		&	Lfd.Nr.	& Name 					& Liste 	& Stimme/Vote 	&77			& Doe, John		&Liste3		&$\square$ \\ \hline
+
+9		& Doe, John				&Liste3			&$\square$		&	35		& Doe, John			& Liste7		&$\square$		&	55		& Doe, John				&Liste4		&$\square$&					&				&			& \\ \hline
+
+10		& Doe, John				& Liste2		&$\square$		&	36		& Doe, John			& Liste3		&$\square$		&			&						&			&	&					\multicolumn{4}{l|}{\textbf{Medizinische Fakultät}} \\ \hline	
+
+11		& Doe, John				& Liste3		&$\square$		&	37		& Doe, John			& Liste3		&$\square$		&\multicolumn{4}{l||}{\textbf{Fakultät für Biologie}}	&			Lfd.Nr.	&Name			&	Liste	&Stimme/Vote \\ \hline
+
+12		& Doe, John				& Liste3		&$\square$		&	38		& Doe, John			& Liste7		&$\square$		& Lfd.Nr.	&Name					& Liste		&Stimme/Vote	&	78		& Doe, John		& Liste3	&$\square$ \\ \hline
+
+13		& Doe, John				& Liste3		&$\square$		& 	39		& Doe, John			& Liste3		&$\square$		&	56		& Doe, John				& Liste9	&$\square$		&			&				&			& \\ \hline	
+
+14		& Doe, John				& Liste3		&$\square$		&	40		& Doe, John			& Liste4		&$\square$		&	57		& Doe, John				& Liste4	&$\square$		&\multicolumn{4}{l|}{\textbf{Fakultät für Physik}} \\ \hline
+
+15		& Doe, John				& Liste3		&$\square$		&	41		& Doe, John			& Liste3		&$\square$		&	58		& Doe, John				& Liste4	&$\square$		&Lfd.Nr.	& Name			& Liste		&Stimme/Vote \\ \hline
+
+16		& Doe, John				& Liste2		&$\square$		&	42		& Doe, John			& Liste3		&$\square$		&	59		& Doe, John				& Liste4	&$\square$		&	79		& Doe, John		& Liste4	&$\square$ \\ \hline
+
+\end{tabular}
+\newpage
+ }
+ }
