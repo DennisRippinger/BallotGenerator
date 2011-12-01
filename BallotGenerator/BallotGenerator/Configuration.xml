@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+  <pdfLatex>C:\Program Files\MiKTeX 2.9\miktex\bin\pdflatex.exe</pdfLatex>
+  <packageSize>100</packageSize>
+</Configuration>
