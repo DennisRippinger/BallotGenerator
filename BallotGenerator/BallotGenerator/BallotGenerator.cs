@@ -6,6 +6,7 @@ using System.IO;
 using System.Drawing.Imaging;
 using System.Diagnostics;
 using System.Xml.Serialization;
+using System.Collections;
 
 namespace BallotGenerator
 {
@@ -125,6 +126,8 @@ namespace BallotGenerator
 
             Console.WriteLine(_listOfRandomStrings.Count + "unique random values");
 
+            _listOfRandomStrings = Shuffle(_listOfRandomStrings);
+
             Console.WriteLine("Generating barcodes");
 
             // Image.Save throws an exception if the path dosn't exist
@@ -137,10 +140,11 @@ namespace BallotGenerator
             Console.WriteLine("Barcodes generated");
 
             Console.WriteLine("Generating LaTeX files");
+            _listOfRandomStrings = Shuffle(_listOfRandomStrings);
             GenerateLaTeXFiles();
 
             string[] texFiles = Directory.GetFiles(Environment.CurrentDirectory, "*.tex");
-            Console.WriteLine("Generating " + (texFiles.Length-1) + " pdf files");
+            Console.WriteLine("Generating " + (texFiles.Length - 1) + " pdf files");
 
             GeneratePdfFiles(texFiles);
 
@@ -162,6 +166,19 @@ namespace BallotGenerator
                 _listOfRandomStrings.Add(line);
             }
             myFile.Close();
+        }
+
+        /// <summary>
+        /// Shuffles the order of the random lines. 
+        /// So it's harder to map voter <-> ballot.
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        private static List<string> Shuffle(List<string> list)
+        {
+            // See: http://www.codinghorror.com/blog/2007/12/shuffling.html
+            var shuffeldList = list.OrderBy(a => Guid.NewGuid());
+            return shuffeldList.ToList<string>();
         }
     }
 }
